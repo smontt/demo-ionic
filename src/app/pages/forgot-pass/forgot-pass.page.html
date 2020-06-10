@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Recupera tu Contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item color="primary" id="texto">
+    <ion-label>Ingresa tu Email</ion-label>
+  </ion-item>
+  <form [formGroup]="passForm" novalidate>
+    <ion-list class="ion-padding">
+      <ion-item class="ion-padding">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input
+          formControlName="userEmail"
+          type="email"
+          autocapitalize="off"
+          autocomplete="off"
+          autocorrect="off"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="email.invalid && email.touched">
+        <ion-label text-wrap color="danger">
+          {{ getErrorMessage() }}
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button
+        expand="block"
+        class="ion-no-margin"
+        type="submit"
+        color="primary"
+        (click)="resetPass()"
+        [disabled]="passForm.invalid"
+        >Recuperar Contraseña</ion-button
+      >
+    </div>
+  </form>
+</ion-content>

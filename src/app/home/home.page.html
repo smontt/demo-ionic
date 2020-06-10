@@ -1,0 +1,82 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Ionic Demo
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item color="primary" id="texto">
+    <ion-label>Iniciar Sesión</ion-label>
+  </ion-item>
+  <form [formGroup]="loginForm" novalidate>
+    <ion-list class="ion-padding">
+      <ion-item class="ion-padding">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input
+          formControlName="userEmail"
+          type="email"
+          autocapitalize="off"
+          autocomplete="off"
+          autocorrect="off"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="email.invalid && email.touched">
+        <ion-label text-wrap color="danger">
+          {{ getErrorMessage() }}
+        </ion-label>
+      </ion-item>
+
+      <ion-item class="ion-padding">
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input formControlName="userPassword" type="password"></ion-input>
+      </ion-item>
+      <!-- CONTROL ERROR -->
+      <ion-item *ngIf="password.invalid && password.touched">
+        <ion-label text-wrap color="danger">
+          {{ getErrorPassword() }}
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button
+        expand="block"
+        class="ion-no-margin"
+        type="submit"
+        color="primary"
+        (click)="loginUsuario()"
+        [disabled]="loginForm.invalid"
+        >Entrar</ion-button
+      >
+    </div>
+    <div class="ion-padding">
+      <ion-button
+        expand="block"
+        class="ion-no-margin"
+        type="submit"
+        color="danger"
+        (click)="onLoginGoogle()"
+        >Login con Google</ion-button
+      >
+    </div>
+  </form>
+
+  <ion-row>
+    <ion-col id="pregunta">
+      <p routerLink="/forgotpass" id="link">Olvidé mi contraseña</p>
+    </ion-col>
+  </ion-row>
+
+  <div class="ion-padding">
+    <ion-button
+      expand="block"
+      class="ion-no-margin"
+      color="tertiary"
+      (click)="onRegistro()"
+      >CREA TU CUENTA</ion-button
+    >
+  </div>
+</ion-content>
