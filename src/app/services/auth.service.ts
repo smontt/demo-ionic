@@ -60,10 +60,10 @@ export class AuthService {
         email,
         password
       );
-      this.updateUserData(user);
       return user;
     } catch (err) {
-      console.log("Error ", err);
+      console.log("Error Ususario NO Registrado ", err);
+      alert("USUARIO NO REGISTRADO  \nVerifique los datos ingresados");
     }
   }
   //---

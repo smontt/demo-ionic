@@ -52,16 +52,6 @@
         >Entrar</ion-button
       >
     </div>
-    <div class="ion-padding">
-      <ion-button
-        expand="block"
-        class="ion-no-margin"
-        type="submit"
-        color="danger"
-        (click)="onLoginGoogle()"
-        >Login con Google</ion-button
-      >
-    </div>
   </form>
 
   <ion-row>
@@ -69,6 +59,16 @@
       <p routerLink="/forgotpass" id="link">Olvidé mi contraseña</p>
     </ion-col>
   </ion-row>
+
+  <div class="ion-padding">
+    <ion-button
+      expand="block"
+      class="ion-no-margin"
+      color="danger"
+      (click)="onLoginGoogle()"
+      >Login con Google</ion-button
+    >
+  </div>
 
   <div class="ion-padding">
     <ion-button

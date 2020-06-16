@@ -48,7 +48,7 @@ export class ForgotPassPage implements OnInit {
   async resetPass() {
     const datosForm = this.passForm.value;
     const email = datosForm.userEmail;
-    console.log(this.passForm.value);
+    //console.log(this.passForm.value);
     try {
       await this._auth.resetPassword(email);
       this.router.navigate(["/home"]);

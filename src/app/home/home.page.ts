@@ -70,7 +70,7 @@ export class HomePage implements OnInit {
     const datosForm = this.loginForm.value;
     const email = datosForm.userEmail;
     const pass = datosForm.userPassword;
-    console.log(this.loginForm.value);
+    //console.log(this.loginForm.value);
     try {
       const user = await this._auth.login(email, pass);
       if (user) {

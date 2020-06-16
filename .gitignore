@@ -36,3 +36,4 @@ firebase.json
 karma.conf.js
 browserslist
 tsconfig.spec.json
+src/environments
